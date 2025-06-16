@@ -7,7 +7,7 @@ const education = [
     degree: "Information Systems",
     school: "Binus University",
     period: "May 2024 – Present",
-    gpa: "3.79 of 4.00",
+    gpa: "3.81 of 4.00",
     status: "Current"
   },
   {
@@ -23,12 +23,14 @@ const certifications = [
   {
     title: "JavaScript Algorithms and Data Structure",
     issuer: "freeCodeCamp",
-    date: "Apr 2025"
+    date: "Apr 2025",
+    url: "https://www.freecodecamp.org/certification/fariyanto/javascript-algorithms-and-data-structures-v8"
   },
   {
     title: "Responsive Web Design",
     issuer: "freeCodeCamp",
-    date: "Apr 2025"
+    date: "Apr 2025",
+    url: "https://www.freecodecamp.org/certification/fariyanto/responsive-web-design"
   },
   {
     title: "Linux System Administrator",
@@ -38,7 +40,8 @@ const certifications = [
   {
     title: "Certified Practical DevSecOps Engineer",
     issuer: "Studi DevSecOps",
-    date: "Dec 2024"
+    date: "Dec 2024",
+    url: "https://d1zpw5mq5bnzyn.cloudfront.net/images/ba1fe1ff7d774d3cb232e63192dc41de.jpeg"
   }
 ];
 
@@ -105,14 +108,29 @@ export const Education = () => {
             
             <div className="space-y-4">
               {certifications.map((cert, index) => (
-                <div 
-                  key={index}
-                  className="bg-white p-4 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 animate-fade-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <h4 className="font-bold text-gray-900 mb-2">{cert.title}</h4>
-                  <p className="text-blue-600 font-semibold mb-1">{cert.issuer}</p>
-                  <p className="text-gray-600 text-sm">Issued {cert.date}</p>
+                <div key={index}>
+                  {cert.url ? (
+                    <a
+                      href={cert.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block bg-white p-4 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 animate-fade-in cursor-pointer hover:bg-blue-50"
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
+                      <h4 className="font-bold text-gray-900 mb-2">{cert.title}</h4>
+                      <p className="text-blue-600 font-semibold mb-1">{cert.issuer}</p>
+                      <p className="text-gray-600 text-sm">Issued {cert.date}</p>
+                    </a>
+                  ) : (
+                    <div 
+                      className="bg-white p-4 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 animate-fade-in"
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
+                      <h4 className="font-bold text-gray-900 mb-2">{cert.title}</h4>
+                      <p className="text-blue-600 font-semibold mb-1">{cert.issuer}</p>
+                      <p className="text-gray-600 text-sm">Issued {cert.date}</p>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

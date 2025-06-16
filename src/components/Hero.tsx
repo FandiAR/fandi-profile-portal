@@ -4,6 +4,16 @@ import { Github, Mail, Phone, MapPin, Download, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export const Hero = () => {
+  const handleDownloadCV = () => {
+    // Create a temporary link element to trigger download
+    const link = document.createElement('a');
+    link.href = '/cv-fandi-agus-riyanto.pdf'; // You'll need to add this file to the public folder
+    link.download = 'CV-Fandi-Agus-Riyanto.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section id="about" className="pt-20 pb-16 px-6 bg-black text-green-400">
       <div className="container mx-auto max-w-6xl">
@@ -35,11 +45,11 @@ export const Hero = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8 text-sm">
               <a href="mailto:fandiagusriyanto@gmail.com" className="flex items-center gap-2 text-green-300 hover:text-green-100 transition-colors border border-green-400 p-2 hover:bg-green-400 hover:text-black">
                 <Mail size={16} />
-                EMAIL
+                fandiagusriyanto@gmail.com
               </a>
               <a href="tel:+6281316844738" className="flex items-center gap-2 text-green-300 hover:text-green-100 transition-colors border border-green-400 p-2 hover:bg-green-400 hover:text-black">
                 <Phone size={16} />
-                PHONE
+                +62-813-1684-4738
               </a>
               <a href="https://id.linkedin.com/in/fandiar" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-green-300 hover:text-green-100 transition-colors border border-green-400 p-2 hover:bg-green-400 hover:text-black">
                 <Linkedin size={16} />
@@ -58,7 +68,7 @@ export const Hero = () => {
                   [VIEW_GITHUB]
                 </a>
               </Button>
-              <Button className="bg-transparent border border-green-400 text-green-400 hover:bg-green-400 hover:text-black font-mono">
+              <Button onClick={handleDownloadCV} className="bg-transparent border border-green-400 text-green-400 hover:bg-green-400 hover:text-black font-mono">
                 <Download className="mr-2" size={20} />
                 [DOWNLOAD_CV]
               </Button>

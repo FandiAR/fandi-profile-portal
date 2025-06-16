@@ -23,13 +23,13 @@ export const Header = () => {
   };
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/80 backdrop-blur-md shadow-lg' : 'bg-transparent'
+    <header className={`fixed top-0 w-full z-50 transition-all duration-300 font-mono ${
+      isScrolled ? 'bg-black/90 backdrop-blur-md border-b border-green-400' : 'bg-transparent'
     }`}>
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Fandi AR
+          <div className="text-2xl font-bold text-green-400 font-mono">
+            {'> FANDI_AR'}
           </div>
           
           {/* Desktop Menu */}
@@ -38,16 +38,16 @@ export const Header = () => {
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+                className="text-green-300 hover:text-green-100 font-medium transition-colors duration-200 font-mono border border-green-400 px-3 py-1 hover:bg-green-400 hover:text-black"
               >
-                {item}
+                [{item.toUpperCase()}]
               </button>
             ))}
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden"
+            className="md:hidden text-green-400 border border-green-400 p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -56,14 +56,14 @@ export const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 py-4 bg-white rounded-lg shadow-lg">
+          <div className="md:hidden mt-4 py-4 bg-black border border-green-400">
             {['About', 'Experience', 'Projects', 'Skills', 'Education', 'Contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className="block w-full text-left px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                className="block w-full text-left px-4 py-2 text-green-300 hover:text-green-100 hover:bg-green-400 hover:text-black font-mono"
               >
-                {item}
+                [{item.toUpperCase()}]
               </button>
             ))}
           </div>

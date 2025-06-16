@@ -55,47 +55,58 @@ const experiences = [
       "Mentored junior and mid-level developers",
       "Resolved critical production issues, reducing system downtime by 15%"
     ]
+  },
+  {
+    title: "IBM Associate Developer",
+    company: "PT Codephile Rekadaya Mandiri",
+    period: "2015 – 2018",
+    achievements: [
+      "Developed and maintained enterprise-level applications using IBM technologies",
+      "Collaborated with cross-functional teams to deliver software solutions",
+      "Participated in code reviews and maintained high code quality standards",
+      "Gained foundational experience in software development lifecycle and best practices"
+    ]
   }
 ];
 
 export const Experience = () => {
   return (
-    <section id="experience" className="py-20 bg-white">
+    <section id="experience" className="py-20 bg-black text-green-400">
       <div className="container mx-auto max-w-6xl px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Professional Experience
+          <h2 className="text-4xl font-bold mb-4 text-green-400 font-mono">
+            {'>'} PROFESSIONAL_EXPERIENCE
           </h2>
-          <p className="text-xl text-gray-600">9+ years of leadership and technical excellence</p>
+          <p className="text-xl text-green-300 font-mono">[9+ YEARS OF LEADERSHIP AND TECHNICAL EXCELLENCE]</p>
         </div>
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-400 to-purple-500 hidden md:block"></div>
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-green-400 hidden md:block"></div>
           
           <div className="space-y-12">
             {experiences.map((exp, index) => (
               <div key={index} className="relative animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
                 {/* Timeline dot */}
-                <div className="absolute left-6 w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full hidden md:block"></div>
+                <div className="absolute left-6 w-4 h-4 bg-green-400 hidden md:block"></div>
                 
-                <div className="md:ml-16 bg-gradient-to-br from-gray-50 to-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                <div className="md:ml-16 border border-green-400 p-6 bg-black hover:bg-green-400 hover:text-black transition-all duration-300 group">
                   <div className="flex flex-wrap items-start justify-between mb-4">
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{exp.title}</h3>
-                      <h4 className="text-xl text-blue-600 font-semibold mb-2">{exp.company}</h4>
+                      <h3 className="text-xl font-bold font-mono mb-2 group-hover:text-black">{exp.title.toUpperCase()}</h3>
+                      <h4 className="text-lg text-green-300 font-mono mb-2 group-hover:text-black">{exp.company.toUpperCase()}</h4>
                     </div>
-                    <div className="flex items-center text-gray-600 bg-blue-50 px-3 py-1 rounded-full">
-                      <Calendar size={16} className="mr-2" />
-                      {exp.period}
+                    <div className="flex items-center text-green-300 border border-green-400 px-3 py-1 font-mono text-sm group-hover:text-black group-hover:border-black">
+                      <Calendar size={14} className="mr-2" />
+                      [{exp.period}]
                     </div>
                   </div>
                   
-                  <ul className="space-y-3">
+                  <ul className="space-y-2">
                     {exp.achievements.map((achievement, i) => (
-                      <li key={i} className="flex items-start">
-                        <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <span className="text-gray-700 leading-relaxed">{achievement}</span>
+                      <li key={i} className="flex items-start font-mono text-sm">
+                        <span className="text-green-400 mr-3 group-hover:text-black">{'>'}</span>
+                        <span className="text-green-300 leading-relaxed group-hover:text-black">{achievement}</span>
                       </li>
                     ))}
                   </ul>

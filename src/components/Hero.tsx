@@ -1,19 +1,9 @@
 
 import React from 'react';
-import { Github, Mail, Phone, MapPin, Download, Linkedin } from 'lucide-react';
+import { Github, Mail, Phone, MapPin, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export const Hero = () => {
-  const handleDownloadCV = () => {
-    // Create a temporary link element to trigger download
-    const link = document.createElement('a');
-    link.href = '/cv-fandi-agus-riyanto.pdf'; // You'll need to add this file to the public folder
-    link.download = 'CV-Fandi-Agus-Riyanto.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
     <section id="about" className="pt-20 pb-16 px-6 bg-black text-green-400">
       <div className="container mx-auto max-w-6xl">
@@ -61,16 +51,12 @@ export const Hero = () => {
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-4 justify-center">
+            <div className="flex justify-center">
               <Button asChild className="bg-transparent border border-green-400 text-green-400 hover:bg-green-400 hover:text-black font-mono">
                 <a href="https://github.com/FandiAR" target="_blank" rel="noopener noreferrer">
                   <Github className="mr-2" size={20} />
                   [VIEW_GITHUB]
                 </a>
-              </Button>
-              <Button onClick={handleDownloadCV} className="bg-transparent border border-green-400 text-green-400 hover:bg-green-400 hover:text-black font-mono">
-                <Download className="mr-2" size={20} />
-                [DOWNLOAD_CV]
               </Button>
             </div>
           </div>

@@ -11,7 +11,8 @@ const projects = [
     description: "Document management system built using Next.js and Node.js on AWS",
     role: "Checker, Coder",
     tech: ["Next.js", "Node.js", "AWS"],
-    category: "Enterprise"
+    category: "Enterprise",
+    link: "https://floxdoc.com"
   },
   {
     title: "Zone at Contact",
@@ -19,7 +20,8 @@ const projects = [
     description: "Building management system using Next.js and Node.js on AWS",
     role: "Checker, Coder",
     tech: ["Next.js", "Node.js", "AWS"],
-    category: "Management"
+    category: "Management",
+    link: "https://zoneatcontact.com"
   },
   {
     title: "Paras UI",
@@ -27,7 +29,8 @@ const projects = [
     description: "Open-source UI component library built with React Storybook",
     role: "Project Owner, Coder",
     tech: ["React", "Storybook", "TypeScript"],
-    category: "Open Source"
+    category: "Open Source",
+    link: "https://github.com/FandiAR/paras-ui"
   },
   {
     title: "Web Teacher",
@@ -35,7 +38,8 @@ const projects = [
     description: "School coordination app for teachers, students, and parents using React.js",
     role: "Coder",
     tech: ["React.js", "JavaScript"],
-    category: "Education"
+    category: "Education",
+    link: "https://webteacher.app"
   },
   {
     title: "e-SPPD",
@@ -43,7 +47,8 @@ const projects = [
     description: "Electronic travel report system using IBM Lotus Notes, Java, and AngularJS",
     role: "System Designer, Coder",
     tech: ["IBM Lotus Notes", "Java", "AngularJS"],
-    category: "Enterprise"
+    category: "Enterprise",
+    link: "#"
   },
   {
     title: "3D Talent Management",
@@ -51,7 +56,8 @@ const projects = [
     description: "Employee skill mapping app using BabylonJS",
     role: "Coder",
     tech: ["BabylonJS", "JavaScript"],
-    category: "3D/Interactive"
+    category: "3D/Interactive",
+    link: "#"
   }
 ];
 
@@ -156,6 +162,7 @@ export const Projects = () => {
                 
                 <div className="flex gap-3">
                   <Button 
+                    asChild
                     variant="outline" 
                     size="sm"
                     className={`flex-1 font-mono transition-colors ${
@@ -164,8 +171,10 @@ export const Projects = () => {
                         : 'border-blue-200 text-blue-600 hover:bg-blue-50'
                     }`}
                   >
-                    <ExternalLink size={14} className="mr-1" />
-                    {isDark ? '[DETAILS]' : 'Details'}
+                    <a href={project.link} target={project.link !== '#' ? '_blank' : '_self'} rel={project.link !== '#' ? 'noopener noreferrer' : undefined}>
+                      <ExternalLink size={14} className="mr-1" />
+                      {isDark ? '[DETAILS]' : 'Details'}
+                    </a>
                   </Button>
                 </div>
               </div>

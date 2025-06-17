@@ -7,6 +7,12 @@ import { useTheme } from '@/contexts/ThemeContext';
 export const Hero = () => {
   const { isDark } = useTheme();
 
+  const handleWhatsAppClick = () => {
+    const phoneNumber = '6281316844738'; // without + sign for WhatsApp
+    const message = encodeURIComponent('Hello! I found your contact through your portfolio website.');
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+  };
+
   return (
     <section id="about" className={`pt-20 pb-16 px-6 transition-colors duration-300 ${
       isDark ? 'bg-black text-green-400' : 'bg-gradient-to-br from-blue-50 to-indigo-100 text-blue-900'
@@ -62,14 +68,17 @@ export const Hero = () => {
                 <Mail size={16} />
                 fandiagusriyanto@gmail.com
               </a>
-              <a href="tel:+6281316844738" className={`flex items-center gap-2 transition-colors border p-2 ${
-                isDark 
-                  ? 'text-green-300 hover:text-green-100 border-green-400 hover:bg-green-400 hover:text-black' 
-                  : 'text-blue-700 hover:text-blue-600 border-blue-200 hover:bg-blue-600 hover:text-white rounded'
-              }`}>
+              <button
+                onClick={handleWhatsAppClick}
+                className={`flex items-center gap-2 transition-colors border p-2 w-full text-left ${
+                  isDark 
+                    ? 'text-green-300 hover:text-green-100 border-green-400 hover:bg-green-400 hover:text-black' 
+                    : 'text-blue-700 hover:text-blue-600 border-blue-200 hover:bg-blue-600 hover:text-white rounded'
+                }`}
+              >
                 <Phone size={16} />
                 +62-813-1684-4738
-              </a>
+              </button>
               <a href="https://id.linkedin.com/in/fandiar" target="_blank" rel="noopener noreferrer" className={`flex items-center gap-2 transition-colors border p-2 ${
                 isDark 
                   ? 'text-green-300 hover:text-green-100 border-green-400 hover:bg-green-400 hover:text-black' 

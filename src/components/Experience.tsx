@@ -23,7 +23,8 @@ const experiences = [
       "Led the Inventory Squad to improve the InventoryHub mobile app, achieving 100% stock take across 200+ stores in 6 countries",
       "Recruited and onboarded 5+ top-performing engineers",
       "Designed and enforced API contract guidelines, reducing integration errors by 40%",
-      "Enhanced CI/CD processes, cutting down deployment time by 20%"
+      "Enhanced CI/CD processes, cutting down deployment time by 20%",
+      "Managed cross-functional teams across multiple time zones and countries"
     ]
   },
   {
@@ -31,9 +32,10 @@ const experiences = [
     company: "GajiCermat",
     period: "Sep 2021 – Oct 2021",
     achievements: [
-      "Managed a team of 16+ developers",
+      "Managed a team of 16+ developers across multiple product verticals",
       "Standardized product requirement documents to align engineering efforts with business goals",
-      "Implemented a structured QA process, reducing post-release bugs by 30%"
+      "Implemented a structured QA process, reducing post-release bugs by 30%",
+      "Established agile development practices and sprint planning processes"
     ]
   },
   {
@@ -43,7 +45,8 @@ const experiences = [
     achievements: [
       "Bridged product and development teams by translating business requirements into technical solutions",
       "Designed and implemented system architecture to improve scalability and maintainability",
-      "Led the hiring process, recruiting and mentoring high-performing engineers"
+      "Led the hiring process, recruiting and mentoring high-performing engineers",
+      "Architected microservices infrastructure supporting 10k+ daily active users"
     ]
   },
   {
@@ -52,8 +55,20 @@ const experiences = [
     period: "Nov 2018 – Aug 2020",
     achievements: [
       "Developed complex web applications using React.js, increasing system performance by 20%",
-      "Mentored junior and mid-level developers",
-      "Resolved critical production issues, reducing system downtime by 15%"
+      "Mentored junior and mid-level developers, conducting code reviews and technical training",
+      "Resolved critical production issues, reducing system downtime by 15%",
+      "Implemented responsive design patterns and PWA capabilities"
+    ]
+  },
+  {
+    title: "Full Stack Developer",
+    company: "Jukir (Parking Management)",
+    period: "Mar 2018 – Oct 2018",
+    achievements: [
+      "Developed end-to-end parking management system using React.js and Node.js",
+      "Integrated payment gateways and real-time parking slot monitoring",
+      "Implemented geolocation services for parking spot discovery",
+      "Built admin dashboard for parking lot operators and revenue tracking"
     ]
   },
   {
@@ -62,9 +77,10 @@ const experiences = [
     period: "2015 – 2018",
     achievements: [
       "Developed and maintained enterprise-level applications using IBM technologies",
-      "Collaborated with cross-functional teams to deliver software solutions",
+      "Collaborated with cross-functional teams to deliver software solutions for government clients",
       "Participated in code reviews and maintained high code quality standards",
-      "Gained foundational experience in software development lifecycle and best practices"
+      "Gained foundational experience in software development lifecycle and best practices",
+      "Specialized in IBM Lotus Notes, Java, and web development technologies"
     ]
   }
 ];

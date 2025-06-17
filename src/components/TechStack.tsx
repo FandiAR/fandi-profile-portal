@@ -37,9 +37,9 @@ export const TechStack = () => {
           {techStackData.map((tech, index) => (
             <div 
               key={index}
-              className={`p-6 border transition-all duration-300 hover:scale-105 animate-fade-in ${
+              className={`group p-6 border transition-all duration-300 hover:scale-105 animate-fade-in ${
                 isDark 
-                  ? 'border-green-400 bg-black hover:bg-green-400 hover:text-black' 
+                  ? 'border-green-400 bg-black hover:bg-green-400' 
                   : 'border-blue-200 bg-white hover:bg-blue-50 shadow-lg rounded-lg'
               }`}
               style={{ animationDelay: `${index * 0.1}s` }}
@@ -47,13 +47,19 @@ export const TechStack = () => {
               <div className="flex items-center mb-4">
                 <div className={`w-10 h-10 border flex items-center justify-center mr-4 ${
                   isDark 
-                    ? 'border-green-400 group-hover:border-black' 
+                    ? 'border-green-400' 
                     : 'border-blue-200 bg-blue-50'
                 }`}>
-                  <tech.icon className={isDark ? 'text-green-400 group-hover:text-black' : 'text-blue-600'} size={20} />
+                  <tech.icon className={`${
+                    isDark 
+                      ? 'text-green-400 group-hover:text-black' 
+                      : 'text-blue-600'
+                  }`} size={20} />
                 </div>
                 <h3 className={`text-lg font-bold font-mono ${
-                  isDark ? 'group-hover:text-black' : 'text-blue-900'
+                  isDark 
+                    ? 'text-green-400 group-hover:text-black' 
+                    : 'text-blue-900'
                 }`}>
                   {tech.name.toUpperCase()}
                 </h3>
@@ -71,7 +77,9 @@ export const TechStack = () => {
               </div>
               
               <div className={`text-right font-mono text-sm ${
-                isDark ? 'text-green-300 group-hover:text-black' : 'text-blue-700'
+                isDark 
+                  ? 'text-green-300 group-hover:text-black' 
+                  : 'text-blue-700'
               }`}>
                 {tech.level}%
               </div>

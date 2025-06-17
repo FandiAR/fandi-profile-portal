@@ -23,11 +23,26 @@ export const ContactForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
+    
+    // Create email content
+    const emailSubject = encodeURIComponent(`Contact Form: ${formData.subject}`);
+    const emailBody = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    
+    // Open user's email client with pre-filled content
+    window.open(`mailto:fandiagusriyanto@gmail.com?subject=${emailSubject}&body=${emailBody}`, '_blank');
+    
     console.log('Form submitted:', formData);
     setIsSubmitted(true);
     setTimeout(() => setIsSubmitted(false), 3000);
     setFormData({ name: '', email: '', subject: '', message: '' });
+  };
+
+  const handleWhatsAppClick = () => {
+    const phoneNumber = '6281316844738'; // without + sign for WhatsApp
+    const message = encodeURIComponent('Hello! I found your contact through your portfolio website.');
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   };
 
   return (
@@ -72,17 +87,17 @@ export const ContactForm = () => {
                 fandiagusriyanto@gmail.com
               </a>
               
-              <a 
-                href="tel:+6281316844738"
-                className={`flex items-center transition-colors font-mono ${
+              <button
+                onClick={handleWhatsAppClick}
+                className={`flex items-center transition-colors font-mono w-full text-left ${
                   isDark 
                     ? 'text-green-300 hover:text-green-100' 
                     : 'text-blue-700 hover:text-blue-600'
                 }`}
               >
                 <Phone size={20} className="mr-4" />
-                +62 813-1684-4738
-              </a>
+                +62 813-1684-4738 (WhatsApp)
+              </button>
               
               <div className={`flex items-center font-mono ${
                 isDark ? 'text-green-300' : 'text-blue-700'
@@ -107,7 +122,7 @@ export const ContactForm = () => {
                   {isDark ? '> MESSAGE_SENT!' : 'Message Sent!'}
                 </h3>
                 <p className="font-mono">
-                  {isDark ? '[THANK YOU FOR REACHING OUT]' : 'Thank you for reaching out!'}
+                  {isDark ? '[EMAIL CLIENT OPENED - PLEASE SEND THE EMAIL]' : 'Email client opened - please send the email!'}
                 </p>
               </div>
             ) : (
